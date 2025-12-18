@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Primary Meta Tags (Double-blind friendly) -->
-  <meta name="title" content="FlowerDance — Anonymous Project Page">
-  <meta name="description" content="Anonymous project page for FlowerDance, showcasing teaser and qualitative results (comparisons, ablations, motion editing) via local video clips.">
-  <meta name="keywords" content="music-to-dance, 3D human motion, motion generation">
-  <meta name="author" content="Anonymous Authors">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="language" content="English">
+  <!-- Double-blind friendly meta -->
+  <meta name="title" content="FlowerDance: MeanFlow for Efficient and Refined 3D Dance Generation" />
+  <meta name="description" content="Anonymous project page for FlowerDance" />
+  <meta name="author" content="Anonymous Authors" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="language" content="English" />
 
-  <!-- Open Graph / Twitter (keep generic for anonymity) -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Anonymous Project Page">
-  <meta property="og:title" content="FlowerDance — Anonymous Project Page">
-  <meta property="og:description" content="Anonymous project page with teaser and result videos.">
-  <meta property="og:image" content="./teaser/flowerteaser.png">
+  <!-- Open Graph / Twitter (generic) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Anonymous Project Page" />
+  <meta property="og:title" content="FlowerDance — Anonymous Project Page" />
+  <meta property="og:description" content="Anonymous project page with teaser and result videos." />
+  <meta property="og:image" content="./teaser/flowerteaser.png" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FlowerDance — Anonymous Project Page">
-  <meta name="twitter:description" content="Anonymous project page with teaser and result videos.">
-  <meta name="twitter:image" content="./teaser/flowerteaser.png">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlowerDance — Anonymous Project Page" />
+  <meta name="twitter:description" content="Anonymous project page with teaser and result videos." />
+  <meta name="twitter:image" content="./teaser/flowerteaser.png" />
 
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#2563eb" />
 
-  <!-- Critical CSS -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css" />
+  <link rel="stylesheet" href="static/css/index.css" />
 
-  <!-- Non-critical CSS -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
   </noscript>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -51,15 +47,26 @@
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
 
+  <!-- Color title + one-video-per-row layout -->
   <style>
-    .fd-section { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-    .fd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
-    .fd-card { margin: 0; }
-    .fd-video { width: 100%; height: auto; border-radius: 12px; background: #000; }
-    .fd-caption { margin-top: 10px; font-size: 0.98rem; line-height: 1.35; }
-    .fd-subtitle { margin-top: 0.25rem; opacity: 0.9; }
-    .fd-divider { height: 1px; background: rgba(0,0,0,0.08); margin: 1.25rem 0; }
-    code.fd-code { font-size: 0.95em; }
+    :root{
+      --flowcolor:#FF3B30;   /* red */
+      --ecolor:#FF9500;      /* orange */
+      --rcolor:#FFD60A;      /* yellow */
+      --dancecolor:#007AFF;  /* blue */
+    }
+
+    .fd-title{ font-weight:800; letter-spacing:-0.02em; }
+    .fd-subtitle{ margin-top:0.25rem; opacity:0.92; }
+
+    .fd-section{ padding-top:1.5rem; padding-bottom:1.5rem; }
+    .fd-divider{ height:1px; background:rgba(0,0,0,0.08); margin:1.25rem 0; }
+
+    /* One video per row */
+    .fd-row{ margin: 1.05rem 0 1.65rem; }
+    .fd-row video{ width:100%; height:auto; border-radius:12px; background:#000; display:block; }
+    .fd-cap{ margin-top:10px; font-size:1.02rem; line-height:1.35; }
+    .fd-cap small{ opacity:0.85; font-weight:500; }
   </style>
 
   <title>FlowerDance — Anonymous Project Page</title>
@@ -73,39 +80,42 @@
 
   <main id="main-content">
 
-    <!-- HERO (Anonymous: no author list) -->
+    <!-- HERO (Anonymous; no author list) -->
     <section class="hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">FlowerDance</h1>
-              <p class="is-size-5 fd-subtitle">Anonymous Project Page (Double-blind)</p>
 
-              <!-- Optional: keep only safe links -->
+              <h1 class="title is-1 publication-title fd-title" aria-label="FlowerDance">
+                <span style="color:var(--flowcolor)">Flow</span><span style="color:var(--ecolor)">e</span><span style="color:var(--rcolor)">r</span><span style="color:var(--dancecolor)">Dance</span><span>:</span>
+              </h1>
+
+              <p class="is-size-5 fd-subtitle">
+                Mean<span style="color:var(--flowcolor); font-weight:800;">Flow</span> for
+                <span style="color:var(--ecolor); font-weight:800;">E</span>fficient and
+                <span style="color:var(--rcolor); font-weight:800;">R</span>efined 3D
+                <span style="color:var(--dancecolor); font-weight:800;">Dance</span> Generation
+              </p>
+
+              <p class="is-size-6 fd-subtitle" style="margin-top:0.6rem;">
+                Anonymous Project Page
+              </p>
+
+              <!-- Optional safe links (remove if your venue forbids external links) -->
               <div class="column has-text-centered" style="margin-top: 0.9rem;">
                 <div class="publication-links">
                   <span class="link-block">
                     <a href="https://www.youtube.com/watch?v=Xhi8EYKn5i8" target="_blank" rel="noopener"
-                      class="external-link button is-normal is-rounded is-dark">
+                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="fab fa-youtube"></i></span>
                       <span>Full Demo (YouTube)</span>
                     </a>
                   </span>
-
-                  <!-- If you want to hide all outbound links during review, just delete this block. -->
-                  <span class="link-block">
-                    <a href="#" onclick="return false;"
-                      class="external-link button is-normal is-rounded is-light">
-                      <span class="icon"><i class="fab fa-github"></i></span>
-                      <span>Code (Coming Soon)</span>
-                    </a>
-                  </span>
                 </div>
-
-                <p class="fd-subtitle" style="margin-top: 0.6rem;">
-                  Local clips are loaded from <code class="fd-code">./demo_vids/</code>.
-                </p>
+                <!-- <p class="fd-subtitle" style="margin-top: 0.6rem;">
+                  Local clips are loaded from <code>./demo_vids/</code>.
+                </p> -->
               </div>
 
             </div>
@@ -153,46 +163,53 @@
       </div>
     </section>
 
-    <!-- RESULTS: Comparison -->
+    <!-- RESULTS -->
     <section class="section fd-section">
       <div class="container is-max-desktop content">
-        <h2 class="title is-3">Comparison</h2>
 
-        <div class="fd-grid">
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_oursvsmega.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Ours vs MEGA</b></figcaption>
-          </figure>
+        <!-- Comparison in detail -->
+        <h2 class="title is-3">Comparison in Detail</h2>
+        <p class="fd-subtitle">One-to-one qualitative comparisons.</p>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_oursvslodge.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Ours vs Lodge</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_oursvsmega.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Ours vs MEGA</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_oursvsfinnet.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Ours vs FineNet</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_oursvslodge.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Ours vs Lodge</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_cmp1.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Comparison</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_oursvsfinnet.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Ours vs FineNet</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_cmp2.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Comparison</b></figcaption>
-          </figure>
+        <div class="fd-divider"></div>
+
+        <!-- Grouped comparison -->
+        <h2 class="title is-3">Comparison (Grouped)</h2>
+        <p class="fd-subtitle">Grouped comparisons.</p>
+
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_cmp1.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Comparison</b> <small>(grouped view 1)</small></div>
+        </div>
+
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_cmp2.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Comparison</b> <small>(grouped view 2)</small></div>
         </div>
 
         <div class="fd-divider"></div>
@@ -200,48 +217,46 @@
         <!-- Ablation Study -->
         <h2 class="title is-3">Ablation Study</h2>
 
-        <div class="fd-grid">
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_abl_1.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Effect of Generative Model</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_abl_1.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Effect of Generative Model</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_abl_2.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Effect of Model Backbone</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_abl_2.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Effect of Model Backbone</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_abl_3.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Effect of Cross-Modal Fusion</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_abl_3.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Effect of Cross-Modal Fusion</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_abl_4.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Effect of Physical Consistency Constraint</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_abl_4.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Effect of Physical Consistency Constraint</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_abl_5.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Effect of Sampling Strategy</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_abl_5.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Effect of Sampling Strategy</b></div>
+        </div>
 
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_abl_6.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Effect of ODE Sampling Step</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_abl_6.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Effect of ODE Sampling Step</b></div>
         </div>
 
         <div class="fd-divider"></div>
@@ -249,18 +264,15 @@
         <!-- Motion Edition -->
         <h2 class="title is-3">Motion Edition</h2>
 
-        <div class="fd-grid">
-          <figure class="fd-card">
-            <video class="fd-video" controls playsinline preload="metadata">
-              <source src="./demo_vids/fl_motionedit.mp4" type="video/mp4">
-            </video>
-            <figcaption class="fd-caption"><b>Motion Edition</b></figcaption>
-          </figure>
+        <div class="fd-row">
+          <video controls playsinline preload="metadata">
+            <source src="./demo_vids/fl_motionedit.mp4" type="video/mp4">
+          </video>
+          <div class="fd-cap"><b>Motion Edition</b></div>
         </div>
 
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
@@ -284,7 +296,6 @@
     </div>
   </footer>
 
-  <!-- Minimal fallbacks if template JS isn't present -->
   <script>
     function scrollToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
   </script>
